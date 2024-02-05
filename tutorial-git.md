@@ -1,16 +1,25 @@
 # introdução
 
 ## o que é git?
-git é um sistema de controle de versão de arquivos e é principalmente utilizado em desenvolvimento de software.  
+git é um sistema de controle de versão descentralizado voltado ao desenvolvimento de software.
 
----
-ele permite o controle detalhado de todas as alterações feitas nos arquivos, possibilitando que os colaboradores trabalhem simultaneamente sem causar conflitos. com o git, você pode fazer alterações, experimentar novas ideias e, se necessário, voltar a versões anteriores do projeto com facilidade.  
+- permite o controle detalhado de todas as alterações feitas nos arquivos.
+- possibilita aos colaboradores trabalharem simultaneamente sem conflitos.
 
----
+com o git, você pode fazer alterações, experimentar novas ideias e, se necessário, voltar a versões anteriores do projeto com facilidade.  
+
+## motivação
 imagine quando trabalhamos em um projeto em equipe, como um artigo para a faculdade. cada membro do grupo fica responsável por uma parte do trabalho, e, ao final, é necessário unificar tudo em um único documento. às vezes, surgem divergências sobre o conteúdo, o que pode resultar em um retrabalho tedioso. é esse o problema que o git resolve.  
 
+## conceitos iniciais
+- repositórios  
+    para os nossos propósitos, um repositório é um espaço virtual capaz de gerenciar acesso a si mesmo e que contém algum código acompanhado do seu histórico de mudanças.
+- sistemas (des)centralizados  
+    um sistema centralizado depende de um nó/dispositivo central para funcionar. num descentralizado essa dependência é distribuída.
+- repositórios remotos
+
 ## o que é GitHub?
-GitHub é uma plataforma de hospedagem de projetos que utilizam o Git para controle de versão. é uma espécie de rede social para desenvolvedores, onde você pode armazenar seus repositórios (pastas do Git) e compartilhar seu trabalho com a comunidade.
+GitHub é uma plataforma de hospedagem de repositórios git. serve também como uma espécie de rede social para desenvolvedores, onde você pode compartilhar seu trabalho e projetos com a comunidade.
 
 ## importância 
 - controle de versão na nuvem:  
@@ -20,9 +29,9 @@ GitHub é uma plataforma de hospedagem de projetos que utilizam o Git para contr
 
 ---
 - explorar códigos e projetos:  
-	além de compartilhar seus projetos, no github você pode explorar o trabalho de outros desenvolvedores, encontrando inspiração ou colaborando com seus projetos. também dá mais visibilidade aos seus próprios.
+	além de compartilhar seus projetos, no GitHub você pode explorar o trabalho de outros desenvolvedores, encontrando inspiração ou colaborando com seus projetos. também dá mais visibilidade aos seus próprios.
 
-## conceitos
+## outros conceitos
 - commit & branch  
     um `commit` é um registro do estado do código num certo ponto do tempo[^4]. o controle de versão no git funciona com uma sequência de `commits`, que são estruturados na forma de uma árvore (cada commit é ligado a pelo menos um outro, em sequência). cada ramo dessa árvore é uma `branch`.
 
@@ -30,7 +39,7 @@ GitHub é uma plataforma de hospedagem de projetos que utilizam o Git para contr
 - tracking & staging  
     não é necessário que cada mudança em qualquer arquivo da pasta seja registrada no repositório (nem que todos os arquivos dentro dela estejam adicionados nele). só vão fazer parte do commit os arquivos "monitorados" (tracked) e os que nunca foram vigiados não fazem parte do repositório (por exemplo quando são usados.[^6]
 - fork  
-	fork é uma ação disponível do github, em que você cria uma cópia de um repositório de outra pessoa para sua conta para fazer suas alterações nele. essa cópia permite que você trabalhe em melhorias sem afetar o projeto original.
+	fork é uma ação disponível do GitHub, em que você cria uma cópia remota de um repositório de outra pessoa para sua conta para fazer suas alterações nele. essa cópia permite que você trabalhe em melhorias sem afetar o projeto original.
 
 [^4]: eles são armazenados (acompanhados de um identificador) como as diferenças entre os arquivos nos pontos adjacentes
 
@@ -88,7 +97,7 @@ uso: []
 existem configurações globais e locais, []
 
 
-## conectando com o github
+## conectando com o GitHub
 ---
 ### via terminal: 
 #### ssh (recomendado): [!]
@@ -118,7 +127,7 @@ existem configurações globais e locais, []
 ---
 4. associar a chave à conta
 	- copie a sua chave pública (o conteúdo do arquivo .pub)
-	- clique na sua foto de perfil na página inicial do github
+	- clique na sua foto de perfil na página inicial do GitHub
 	- configurações
 	- navegue até "chaves SSH e GPG", embaixo de "acesso" [^docs-caminho]
 	- clique em "nova chave SSH"
@@ -134,7 +143,7 @@ instruções mais detalhadas (inglês):
 
 ---
 #### https (mais fácil) [! completar]:
-1. clicar na sua foto de perfil a partir da página inicial do github
+1. clicar na sua foto de perfil a partir da página inicial do GitHub
 2. configurações
 3. no fim da barra lateral, entre em "Configurações de desenvolvedor"
 4. selecione "Personal Access Tokens" [!inglês] na barra lateral
@@ -154,7 +163,7 @@ para qualquer acesso remoto a um repositório privado ou escrita em algum reposi
 ---
 - clone:  
     esse é o comando para baixar um repositório remoto como uma cópia local na sua máquina. por padrão baixa o repositório inteiro, com todo o seu histórico. para mudar isso, pode-se usar o argumento `--depth $profundidade` (útil para repositórios grandes/antigos).
-    para conseguir o endereço pode-se apenas copiar o link do repositório no github, ou clicar no botão "code" na página e escolher o protocolo de conexão (ssh ou https).  
+    para conseguir o endereço pode-se apenas copiar o link do repositório no GitHub, ou clicar no botão "code" na página e escolher o protocolo de conexão (ssh ou https).  
     uso: `git clone $link`[^3].
 
 ---
@@ -177,6 +186,7 @@ para qualquer acesso remoto a um repositório privado ou escrita em algum reposi
 - git for windows
 - gitkraken
 - extensão do vscode
+- replit*
 - [...]
 
 [^instalações-linux]:
