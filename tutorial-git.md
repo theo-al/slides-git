@@ -9,6 +9,8 @@
 ## o que é git?
 git é um sistema de controle de versão de arquivos e é principalmente utilizado em desenvolvimento de software. ele permite o controle detalhado de todas as alterações feitas nos arquivos, possibilitando que os colaboradores trabalhem simultaneamente sem causar conflitos. com o git, você pode fazer alterações, experimentar novas ideias e, se necessário, voltar a versões anteriores do projeto com facilidade.
 
+---
+
 imagine quando trabalhamos em um projeto em equipe, como um artigo para a faculdade. cada membro do grupo fica responsável por uma parte do trabalho, e, ao final, é necessário unificar tudo em um único documento. às vezes, surgem divergências sobre o conteúdo, o que pode resultar em um retrabalho tedioso. é esse o problema que o git resolve.
 
 ## o que é GitHub?
@@ -19,12 +21,14 @@ GitHub é uma plataforma de hospedagem de projetos que utilizam o Git para contr
     ao hospedar seus projetos no GitHub, você mantém uma cópia na nuvem, o que protege contra a perda de dados caso algo aconteça com o seu computador.
 - colaboração simplificada:  
 	o git facilita o trabalho em equipe, permitindo que vários desenvolvedores trabalhem simultaneamente no mesmo projeto, gerenciando as alterações de forma inteligente.
+---
 - explorar códigos e projetos:  
 	além de compartilhar seus projetos, no github você pode explorar o trabalho de outros desenvolvedores, encontrando inspiração ou colaborando com seus projetos. também dá mais visibilidade aos seus próprios.
 
 ## conceitos
 - commit & branch  
     um `commit` é um registro do estado do código num certo ponto do tempo[^4]. o controle de versão no git funciona com uma sequência de `commits`, que são estruturados na forma de uma árvore (cada commit é ligado a pelo menos um outro, em sequência). cada ramo dessa árvore é uma `branch`.
+---
 - tracking & staging  
     não é necessário que cada mudança em qualquer arquivo da pasta seja registrada no repositório (nem que todos os arquivos dentro dela estejam adicionados nele). só vão fazer parte do commit os arquivos "monitorados" (tracked) e os que nunca foram vigiados não fazem parte do repositório (por exemplo quando são usados.[^6]
 - fork  
@@ -35,17 +39,21 @@ GitHub é uma plataforma de hospedagem de projetos que utilizam o Git para contr
 # uso geral
 
 ## comandos
-os comandos são chamados chamando git no terminal, seguido do nome do comando e dos argumentos e opções (ie. `git $comando $opções $args`). aqui estão alguns dos principais comandos do git que você usará com frequência:
+os comandos são chamados chamando git no terminal, seguido do nome do comando e dos argumentos e opções (ie. `git $comando $opções $args`).
+---
+aqui estão alguns dos principais comandos do git que você usará com frequência:
 - init:  
     é como se cria um repositório local. inicializa o git na pasta, criando um subdiretório '.git'. não faz commit nenhum quando é chamado.
 - status:  
     mostra informações como ramo atual, arquivos modificados e vigiados/não vigiados.
+---
 - commit:  
     faz commit de todos as mudanças em arquivos no staging. para adicionar um arquivo ao staging, usa-se o comando `add`. um arquivo não fica automaticamente no staging por ter sido alterado[^7].  
     uso: `git commit [-m "mensagem do commit"]`
 - add[^6]:  
     adiciona um arquivo ao staging para o commit. depois do commit, esse arquivo passa a ser monitorado ("tracked").  
     uso: `git add $arquivo`
+---
 - branch:  
     cria um novo ramo com o nome especificado a partir de outro, com o seu estado atual. se não especificado, cria a partir do ramo atual.  
 	uso: `git branch [$velho] $novo`
@@ -65,6 +73,7 @@ os comandos são chamados chamando git no terminal, seguido do nome do comando e
 ### linux
 - instalar o git com o seu gerenciador de pacotes [^instalações-linux]
 
+---
 ### windows
 1. baixe o git a partir do site oficial: <https://git-scm.com/download/win> [^instalações-windows]
 2. siga o instalador
@@ -79,13 +88,14 @@ existem configurações globais e locais, []
 
 
 ## conectando com o github
+---
 ### via terminal: 
 #### ssh (recomendado): [!]
 
 1. instalar (se já não estiver instalado)
     - instalar ssh ou openssh com o seu gerenciador de pacotes [^instalações-linux]
     - windows: [winget|chocolatey]
-
+---
 2. gerar chaves[^2]
 
     rode o comando seguinte (substitua)
@@ -98,10 +108,12 @@ existem configurações globais e locais, []
 [^1]: faz sentido colocar na pasta .ssh  
 [^2]: (podem ser usadas chaves já existentes [se forem do tipo certo])  
 
+---
 3. adicionar a chave ao agente de ssh
 	- coloque o ssh-agent para rodar em segundo plano (`ssh-agent &`)
 	- rode `ssh-add /caminho/para/a/chave/nome_da_chave` (substituindo)
 
+---
 4. associar a chave à conta
 	- copie a sua chave pública (o conteúdo do arquivo .pub)
 	- clique na sua foto de perfil na página inicial do github
@@ -118,13 +130,14 @@ instruções mais detalhadas (inglês):
 
 [^docs-caminho]: <https://docs.github.com/pt/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account>
 
+---
 #### https (mais fácil) [! completar]:
 1. clicar na sua foto de perfil a partir da página inicial do github
 2. configurações
 3. no fim da barra lateral, entre em "Configurações de desenvolvedor"
 4. selecione "Personal Access Tokens" [!inglês] na barra lateral
 5. <https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token>
-
+---
 para qualquer acesso remoto a um repositório privado ou escrita em algum repositório, vai ser pedida uma senha, que é esse token de acesso.
 
 ## repositórios remotos [!]
@@ -135,10 +148,12 @@ para qualquer acesso remoto a um repositório privado ou escrita em algum reposi
         uso: `git remote add $nome $link`
     - remove: remove o repositório remoto.  
     	uso: `git remote remove $nome`
+---
 - clone:  
     esse é o comando para baixar um repositório remoto como uma cópia local na sua máquina. por padrão baixa o repositório inteiro, com todo o seu histórico. para mudar isso, pode-se usar o argumento `--depth $profundidade` (útil para repositórios grandes/antigos).
     para conseguir o endereço pode-se apenas copiar o link do repositório no github, ou clicar no botão "code" na página e escolher o protocolo de conexão (ssh ou https).  
     uso: `git clone $link`[^3].
+---
 - pull:  
     atualiza o repositório com as mudanças mais recentes no repositório remoto, fazendo um `merge` se existe divergência. basicamente o complementar de `push`.  
     uso: `git pull`[^5].
@@ -153,6 +168,7 @@ para qualquer acesso remoto a um repositório privado ou escrita em algum reposi
 
 
 # clientes alternativos | interfaces gráficas
+---
 - github desktop
 - git for windows
 - gitkraken
