@@ -1,16 +1,8 @@
-# WIP
-- integração git posit/Rstudio/vscode
-- completar o resto
-	- completar coisas com [!]
-	- falar de stash?
-- tabela de conteúdo
-
 # introdução
+
 ## o que é git?
 git é um sistema de controle de versão de arquivos e é principalmente utilizado em desenvolvimento de software. ele permite o controle detalhado de todas as alterações feitas nos arquivos, possibilitando que os colaboradores trabalhem simultaneamente sem causar conflitos. com o git, você pode fazer alterações, experimentar novas ideias e, se necessário, voltar a versões anteriores do projeto com facilidade.
-
 ---
-
 imagine quando trabalhamos em um projeto em equipe, como um artigo para a faculdade. cada membro do grupo fica responsável por uma parte do trabalho, e, ao final, é necessário unificar tudo em um único documento. às vezes, surgem divergências sobre o conteúdo, o que pode resultar em um retrabalho tedioso. é esse o problema que o git resolve.
 
 ## o que é GitHub?
